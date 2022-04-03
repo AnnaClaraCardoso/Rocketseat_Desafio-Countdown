@@ -1,0 +1,25 @@
+:root {
+  --black: #4D4C59;
+  --purple: #6C63FF;
+	--light-grey: #C8C8C8;
+  --text-color: #9C9AB6;
+  font-family: 'Poppins', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-image: url("/images/top-image.svg"), url("/images/bottom-image.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: top, bottom;
+}
+
+.flex-container {
+  display: flex;
+}
