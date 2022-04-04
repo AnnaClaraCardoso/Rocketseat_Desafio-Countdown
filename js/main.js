@@ -6,11 +6,9 @@ const DEFAULT_TIME_LABELS = {
 };
 
 class Countdown {
-  constructor(days, hours, minutes, seconds) {
+  constructor(counterHTML, days, hours, minutes, seconds) {
 
-    this.interval = null
-
-    this.counterHTML = `
+    counterHTML.innerHTML = `
       <span class="countdown-element days"></span>
       <span class="countdown-element">:</span>
       <span class="countdown-element hours"></span>
@@ -20,6 +18,7 @@ class Countdown {
       <span class="countdown-element seconds"></span>
     `
 
+    this.interval = null
     this.remainingSeconds = 0
 
     this.element = {
@@ -28,13 +27,15 @@ class Countdown {
       minutes: counterHTML.querySelector('.minutes'),
       seconds: counterHTML.querySelector('.seconds'),
     }
+
     this.remainingSeconds = ((days*86400)+(hours*3600)+(minutes*60)+seconds)
+    this.start()
   }
 
   start() {
     if (this.remainingSeconds === 0) return;
 
-    this.interval = setIntervalpre(() => {
+    this.interval = setInterval(() => {
       this.remainingSeconds--;
       this.updateInterfaceTime();
 
@@ -48,6 +49,8 @@ class Countdown {
     clearInterval(this.interval);
 
     this.interval = null;
+
+    endMessage
   }
 
   updateInterfaceTime() {
@@ -56,7 +59,7 @@ class Countdown {
     const minutes = Math.floor(this.remainingSeconds / 60);
     const seconds = this.remainingSeconds % 60;
     
-    this.element.days.textContent = days.toString().padStart(2, "0");
+    this.element.days.textContent = days.toString().padStart(2, "0"); // .padStart() > valores padrões para elementos de texto
     this.element.hours.textContent = hours.toString().padStart(2, "0");
     this.element.minutes.textContent = minutes.toString().padStart(2, "0");
     this.element.seconds.textContent = seconds.toString().padStart(2, "0");
@@ -64,4 +67,11 @@ class Countdown {
 
 }
 
-document.addEventListener("load", new Countdown(0, 0, 1, 30))
+document.addEventListener("load", new Countdown(
+    document.querySelector(".countdown"), 
+    0, 
+    0, 
+    0, 
+    10  
+  )
+)
