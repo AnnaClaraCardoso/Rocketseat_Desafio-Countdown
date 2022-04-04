@@ -18,6 +18,7 @@ body {
   background-image: url("/images/top-image.svg"), url("/images/bottom-image.svg");
   background-repeat: no-repeat, no-repeat;
   background-position: top, bottom;
+  background-size: 100%, 100%;
 }
 
 .flex-container {
