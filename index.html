@@ -19,13 +19,26 @@
   <div class="flex-container">
     <section class="countdown-to-subscribe">
       <h1>Ready to launch in...</h1>
-      <div class="countdown">
-        
-      </div>
+      <div class="countdown"></div>
       <p>Inscreva-se para saber mais sobre o lançamento</p>
       <button class="subscribe-btn">Inscreva-se</button>
     </section>
     <img class="rocket" src="images/rocket.svg" alt="">
+    <div class="modal modal-fade show" style="display: block;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header"><h2>Modal Title</h2></div>
+          <div class="modal-body">
+            <p>Modal inner-content</p>
+            <label for="full-name-input">Nome completo</label>
+            <input type="text" name="full-name-input" id="full-name-input">
+            <label for="email-input">E-mail</label>
+            <input type="text" name="email-input" id="email-input">
+            <button type="submit">Enviar inscrição</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <script src="js/main.js"></script>
 </body>
