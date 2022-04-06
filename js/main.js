@@ -1,14 +1,32 @@
+const DEFAULT_TIME_LABELS = {
+  d: 'Dias',
+  h: 'Horas',
+  m: 'Minutos',
+  s: 'Segundos',
+};
+
 class Countdown {
-  constructor(days, hours, minutes, seconds) {
+  constructor(counterHTML, days, hours, minutes, seconds) {
+
+    counterHTML.innerHTML = `
+      
+      <span class="countdown-element days"></span>
+      <span class="countdown-element">:</span>
+      <span class="countdown-element hours"></span>
+      <span class="countdown-element">:</span>
+      <span class="countdown-element minutes"></span>
+      <span class="countdown-element">:</span>
+      <span class="countdown-element seconds"></span>
+    `
 
     this.interval = null
     this.remainingSeconds = 0
 
     this.element = {
-      days: document.querySelector('.days'),
-      hours: document.querySelector('.hours'),
-      minutes: document.querySelector('.minutes'),
-      seconds: document.querySelector('.seconds'),
+      days: counterHTML.querySelector('.days'),
+      hours: counterHTML.querySelector('.hours'),
+      minutes: counterHTML.querySelector('.minutes'),
+      seconds: counterHTML.querySelector('.seconds'),
     }
 
     this.remainingSeconds = ((days*86400)+(hours*3600)+(minutes*60)+seconds)
@@ -19,22 +37,21 @@ class Countdown {
     if (this.remainingSeconds === 0) return;
 
     this.interval = setInterval(() => {
-      // setando comandos de atualização do contador para o intervalo de 1 s
       this.remainingSeconds--;
       this.updateInterfaceTime();
 
       if (this.remainingSeconds === 0) {
-        this.atFinish();
+        this.stop();
       }
     }, 1000);
   }
 
-  atFinish() {
+  stop() {
     clearInterval(this.interval);
 
     this.interval = null;
 
-    this.endMessage()
+    endMessage
   }
 
   updateInterfaceTime() {
@@ -49,20 +66,17 @@ class Countdown {
     this.element.seconds.textContent = seconds.toString().padStart(2, "0");
   }
 
-  endMessage() {
-    let section = document.querySelector('section')
-    section.removeChild(document.querySelector('.countdown-to-subscribe'))
-    section.removeChild(document.querySelector('button'))
-
-    /* Adicionar elementos com messagem de aviso de término de prazo para inscrição */
-  }
-
 }
 
 document.addEventListener("load", new Countdown(
+    document.querySelector(".countdown"), 
     0, 
     0, 
     0, 
     10  
   )
 )
+
+const modal = document.querySelector('.modal.')
+
+document.querySelector('.subscribe-btn').addEventListener('click')
