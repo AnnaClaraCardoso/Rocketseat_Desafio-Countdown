@@ -21,6 +21,89 @@ body {
   background-size: 100%, 100%;
 }
 
-.flex-container {
+main {
   display: flex;
+  min-height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+  overflow: hidden; /* retira as barras de rolagem */
+  transition: all 0.5s ease-in-out;
+}
+
+section {
+  width: 480px;
+  text-align: center;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 36px;
+  letter-spacing: 0.105em;
+  text-transform: uppercase;
+  color: var(--purple);
+}
+
+.countdown-to-subscribe {
+  padding-top: 1.8vh;
+  padding-bottom: 8vh;
+}
+
+.labels, .countdown{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.countdown {
+  font-weight: 400;
+  font-size: 72px;
+  color: var(--black);
+}
+
+.labels span {
+  width: 20%;
+  text-align: center;
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--light-grey);
+}
+
+.countdown-separator {
+  padding: 0 8px;
+}
+
+p {
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--text-color);
+  margin-bottom: 4vh;
+}
+
+.subscribe-btn {
+  padding: 0.6em 2.5em;
+  background-color: var(--purple);
+  font-size: 16px;
+  line-height: 2em;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+}
+
+.subscribe-btn:hover {
+  background-color: rgb(85, 77, 230);
+}
+
+.subscribe-btn:active {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+  /* definindo "borda interna" */
+  outline: 2px solid var(--purple);
+  outline-offset: -2px;
+  
 }
