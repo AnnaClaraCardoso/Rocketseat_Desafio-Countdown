@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 
-  <!-- Acessando Fontes -->
+  <!-- Requisitando Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
@@ -16,30 +16,45 @@
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-  <div class="flex-container">
-    <section class="countdown-to-subscribe">
+  <main>
+    <section>
       <h1>Ready to launch in...</h1>
-      <div class="countdown"></div>
+      
+      <div class="countdown-to-subscribe">
+        <div class="labels">
+          <span>Dias</span>
+          <span>Horas</span>
+          <span>Minutos</span>
+          <span>Segundos</span>
+        </div>
+        <div class="countdown">
+          <span class="countdown-element days"></span>
+          <span class="countdown-separator">:</span>
+          <span class="countdown-element hours"></span>
+          <span class="countdown-separator">:</span>
+          <span class="countdown-element minutes"></span>
+          <span class="countdown-separator">:</span>
+          <span class="countdown-element seconds"></span>
+        </div>
+      </div>
+      
       <p>Inscreva-se para saber mais sobre o lançamento</p>
       <button class="subscribe-btn">Inscreva-se</button>
     </section>
     <img class="rocket" src="images/rocket.svg" alt="">
-    <div class="modal modal-fade show" style="display: block;">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header"><h2>Modal Title</h2></div>
-          <div class="modal-body">
-            <p>Modal inner-content</p>
-            <label for="full-name-input">Nome completo</label>
-            <input type="text" name="full-name-input" id="full-name-input">
-            <label for="email-input">E-mail</label>
-            <input type="email" name="email-input" id="email-input">
-            <button type="submit">Enviar inscrição</button>
-          </div>
-        </div>
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Title</h3>
+      </div>
+      <div class="modal-body">
+        <p>dslmfdsnlç</p>
+        <label for="recipient-name" class=""></label>
+        <input id="name-input" type="submit" value="">
+        <input id="email-input" type="submit" value="">
+        <input id="phone_number-input" type="submit" value="">
       </div>
     </div>
-  </div>
+  </main>
   <script src="js/main.js"></script>
 </body>
 </html>
