@@ -93,11 +93,11 @@ p {
   border-radius: 10px;
 }
 
-.subscribe-btn:hover {
+.subscribe-btn:hover, .submit-sub-btn:hover {
   background-color: rgb(85, 77, 230);
 }
 
-.subscribe-btn:active {
+.subscribe-btn:active, .submit-sub-btn:active {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -113,11 +113,11 @@ p {
   top: 0;
   left: 0;
   z-index: 1060;
-  display: none;
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
   outline: 0;
+  display: none;
 }
 
 .modal-fade {
@@ -158,6 +158,38 @@ p {
   outline: 0;
 }
 
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+}
+
 .modal-body input {
   width: 100%;
+}
+
+.close-modal-btn {
+  position: relative;
+  background-color: transparent;
+  width: 32px;
+  height: 32px;
+  border: none;
+  right: 0;
+  top: 0;
+}
+
+.close-modal-btn img {
+  width: 100%;
+  height: 100%;
+}
+
+.submit-sub-btn {
+  margin-top: 1em;
+  padding: 0.4em 2em;
+  background-color: var(--purple);
+  font-size: 14px;
+  line-height: 2em;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
 }
