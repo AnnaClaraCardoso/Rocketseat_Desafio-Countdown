@@ -69,5 +69,5 @@ function openModal() {
 }
 
 function closeModal() {
-  const eventModalClose = iconClose.style.display = "none";
+  const eventModalClose = modal.style.display = 'none'
 }
