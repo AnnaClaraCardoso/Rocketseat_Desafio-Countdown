@@ -62,24 +62,13 @@ class Countdown {
 }
 
 document.addEventListener("load", new Countdown(new Date("December 5, 2022 13:59:50")))
+const modal = document.querySelector('.modal');
 
-showModal = () => {
-  const main = document.querySelector('main')
-
-  let modalHTML = ` 
-    <div class="modal">
-      <div class="modal-header">
-        <h3>Title</h3>
-      </div>
-      <div class="modal-body">
-        <p>dslmfdsnlç</p>
-        <label for="recipient-name" class=""></label>
-        <input id="name-input" type="submit" value="">
-        <input id="email-input" type="submit" value="">
-        <input id="phone_number-input" type="submit" value="">
-      </div>
-    </div> 
-  `
-
-  main.appendChild(modalHTML)
+function openModal() {
+  const newModal = modal.style.display = "block";
 }
+
+function closeModal() {
+  const eventModalClose = iconClose.style.display = "none";
+}   
+
