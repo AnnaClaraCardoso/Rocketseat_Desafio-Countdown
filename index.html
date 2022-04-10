@@ -45,14 +45,19 @@
     <div class="modal modal-fade show" style="display: block;">
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-header"><h2>Modal Title</h2></div>
+          <div class="modal-header">
+            <h2>Modal Title</h2>
+            <button class="close-modal-btn" onclick="closeModal()">
+              <img src="./images/xmark-solid.svg" alt="">
+            </button>
+          </div>
           <div class="modal-body">
             <p>Modal inner-content</p>
             <label for="full-name-input">Nome completo</label>
             <input type="text" name="full-name-input" id="full-name-input">
             <label for="email-input">E-mail</label>
             <input type="email" name="email-input" id="email-input">
-            <button type="submit">Enviar inscrição</button>
+            <button type="submit" class="submit-sub-btn">Enviar inscrição</button>
           </div>
         </div>
       </div>
