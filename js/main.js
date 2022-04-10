@@ -1,57 +1,42 @@
-const DEFAULT_TIME_LABELS = {
-  d: 'Dias',
-  h: 'Horas',
-  m: 'Minutos',
-  s: 'Segundos',
-};
-
 class Countdown {
-  constructor(counterHTML, days, hours, minutes, seconds) {
+  //constructor( Date() )
+  constructor(current_date) {
 
-    counterHTML.innerHTML = `
-      
-      <span class="countdown-element days"></span>
-      <span class="countdown-element">:</span>
-      <span class="countdown-element hours"></span>
-      <span class="countdown-element">:</span>
-      <span class="countdown-element minutes"></span>
-      <span class="countdown-element">:</span>
-      <span class="countdown-element seconds"></span>
-    `
-
-    this.interval = null
+    this.attCounter = null
     this.remainingSeconds = 0
 
     this.element = {
-      days: counterHTML.querySelector('.days'),
-      hours: counterHTML.querySelector('.hours'),
-      minutes: counterHTML.querySelector('.minutes'),
-      seconds: counterHTML.querySelector('.seconds'),
+      days: document.querySelector('.days'),
+      hours: document.querySelector('.hours'),
+      minutes: document.querySelector('.minutes'),
+      seconds: document.querySelector('.seconds'),
     }
 
-    this.remainingSeconds = ((days*86400)+(hours*3600)+(minutes*60)+seconds)
+    // remainingSeconds = current_date - event-date
+    this.remainingSeconds = Math.floor((new Date("December 5, 2022 14:00:00").getTime() - current_date.getTime()) / 1000)
     this.start()
   }
 
   start() {
     if (this.remainingSeconds === 0) return;
 
-    this.interval = setInterval(() => {
+    this.attCounter = setInterval(() => {
+      // setando comandos de atualização do contador para o intervalo de 1 s
       this.remainingSeconds--;
       this.updateInterfaceTime();
 
       if (this.remainingSeconds === 0) {
-        this.stop();
+        this.atFinish();
       }
     }, 1000);
   }
 
-  stop() {
-    clearInterval(this.interval);
+  atFinish() {
+    clearInterval(this.attCounter);
 
-    this.interval = null;
+    this.attCounter = null;
 
-    endMessage
+    this.endMessage()
   }
 
   updateInterfaceTime() {
@@ -66,17 +51,35 @@ class Countdown {
     this.element.seconds.textContent = seconds.toString().padStart(2, "0");
   }
 
+  endMessage() {
+    let section = document.querySelector('section')
+    section.removeChild(document.querySelector('.countdown-to-subscribe'))
+    section.removeChild(document.querySelector('button'))
+
+    /* Adicionar elementos com messagem de aviso de término de prazo para inscrição */
+  }
+
 }
 
-document.addEventListener("load", new Countdown(
-    document.querySelector(".countdown"), 
-    0, 
-    0, 
-    0, 
-    10  
-  )
-)
+document.addEventListener("load", new Countdown(new Date("December 5, 2022 13:59:50")))
 
-const modal = document.querySelector('.modal.')
+showModal = () => {
+  const main = document.querySelector('main')
 
-document.querySelector('.subscribe-btn').addEventListener('click')
+  let modalHTML = ` 
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Title</h3>
+      </div>
+      <div class="modal-body">
+        <p>dslmfdsnlç</p>
+        <label for="recipient-name" class=""></label>
+        <input id="name-input" type="submit" value="">
+        <input id="email-input" type="submit" value="">
+        <input id="phone_number-input" type="submit" value="">
+      </div>
+    </div> 
+  `
+
+  main.appendChild(modalHTML)
+}
